@@ -1,0 +1,28 @@
+input{
+    margin: 10px;
+}
+h2{
+    text-align: center;
+}
+form{
+    margin: auto;
+}
+#amiDijField{
+    float: right;
+}
+label{
+    margin: 5px;
+    font-size: large;
+}
+fieldset{
+    border: 1px solid white;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    max-width: fit-content;
+}
+.required{
+    color: red;
+}
