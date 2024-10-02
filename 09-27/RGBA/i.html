@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rgba</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="./j.js"></script>
+</head>
+<body class="bg-primary">
+    <div class="container mt-5 bg-dark text-white p-5 rounded">
+        <div class="col-4 rounded" id="rect"></div>
+        <div class="col-4">
+            <label for="r">R - <span id="rValue">255</span></label>
+            <input class="form-control form-range" type="range" id="r" min="0" max="255" value="255">
+            <label for="g">G - <span id="gValue">0</span></label>
+            <input class="form-control form-range" type="range" id="g" min="0" max="255" value="0">
+            <label for="b">B - <span id="bValue">0</span></label>
+            <input class="form-control form-range" type="range" id="b" min="0" max="255" value="0">
+            <label for="a">A - <span id="aValue">1</span></label>
+            <input class="form-control form-range" type="range" id="a" min="0" max="1" step="0.01" value="1">
+        </div>
+    </div>
+</body>
+</html>
