@@ -30,22 +30,22 @@
                 <legend>Benzin típusa:</legend>
               
                 <div>
-                  <input type="radio" id="diesel" name="benzinType" value="diesel" checked />
+                  <input type="radio" id="diesel" name="benzinType" class="radioBenzin" value="diesel" checked />
                   <label for="diesel">Dízel</label>
                 </div>
               
                 <div>
-                  <input type="radio" id="benzin" name="benzinType" value="benzin" />
+                  <input type="radio" id="benzin" name="benzinType" class="radioBenzin" value="benzin" />
                   <label for="benzin">Benzin</label>
                 </div>
               
                 <div>
-                  <input type="radio" id="elecktric" name="benzinType" value="elecktric" />
+                  <input type="radio" id="elecktric" name="benzinType" class="radioBenzin" value="elecktric" />
                   <label for="elecktric">Elektromos</label>
                 </div>
 
                 <div>
-                    <input type="radio" id="lpg" name="benzinType" value="lpg" />
+                    <input type="radio" id="lpg" name="benzinType" class="radioBenzin" value="lpg" />
                     <label for="lpg">LGP</label>
                 </div>
             </fieldset>
@@ -53,11 +53,10 @@
             <input type="text" id="benzinAr"> Ft/l  <span class="text-danger" id="benzinError"></span> <br>
             <label for="hengerSize">hengerűrtartalom</label>
             <select name="kobcenti" id="hengerSize">
-                <option value="0">1000 cm3-ig</option>
-                <option value="1">1001-1500 cm3-ig</option>
-                <option value="2">1501-2000 cm3-ig</option>
-                <option value="3">2001-3000 cm3-ig</option>
-                <option value="4">3000 cm3 felett</option>
+              <option value="5.7">1500 cm3-ig</option>
+              <option value="6.7">1501-2000 cm3-ig</option>
+              <option value="7.6">2001-3000 cm3-ig</option>
+              <option value="9.5">3001 cm3 felett</option>
             </select> <br>  
             <label for="rendszam">Rendszám <sup class="required">*</sup>: </label>
             <input type="text" id="rendszam"> <span class="text-danger" id="rendszamError"></span> <br>
@@ -67,7 +66,8 @@
             <input type="text" id="hova"><br>
             <label for="tav">Megtett távolság <sup class="required">*</sup>: </label>
             <input type="text" id="tav"> km  <span class="text-danger" id="tavError"></span> <br>
-            <button class="btn btn-outline-primary" disabled>Számítás</button>
+            <button class="btn btn-outline-primary" type="submit" disabled>Számítás</button>
+            <div id="result"></div>
         </form>
     </div>
 </body>
