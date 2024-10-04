@@ -4,6 +4,10 @@ $(function(){
     let megtettTavGood;
     let benzin=[
         {
+            value: 0,
+            text: ''
+        },
+        {
             value: 7.6,
             text: '1000 cm3-ig'
         },
@@ -25,6 +29,10 @@ $(function(){
         },
     ]
     let diesel=[
+        {
+            value: 0,
+            text: ''
+        },
         {
             value: 5.7,
             text: '1500 cm3-ig'

@@ -26,3 +26,6 @@ fieldset{
 .required{
     color: red;
 }
+.container{
+    padding: 150px;
+}

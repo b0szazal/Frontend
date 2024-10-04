@@ -10,7 +10,7 @@
     <script src="./j.js"></script>
 </head>
 <body class="bg-primary">
-    <div class="container mt-5 bg-dark text-white p-5 rounded col-6">
+    <div class="container mt-5 bg-dark text-white rounded-pill col-6">
         <h2 class="mb-5">Költségtérítés</h2>
         <form class="col-9">
             <fieldset id="amiDijField">
@@ -53,6 +53,7 @@
             <input type="text" id="benzinAr"> Ft/l  <span class="text-danger" id="benzinError"></span> <br>
             <label for="hengerSize">hengerűrtartalom</label>
             <select name="kobcenti" id="hengerSize">
+              <option value="0"></option>
               <option value="5.7">1500 cm3-ig</option>
               <option value="6.7">1501-2000 cm3-ig</option>
               <option value="7.6">2001-3000 cm3-ig</option>
