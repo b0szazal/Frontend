@@ -51,9 +51,9 @@
             </fieldset>
             <label for="benzinAr">Benzin ára <sup class="required">*</sup>: </label>
             <input type="text" id="benzinAr"> Ft/l  <span class="text-danger" id="benzinError"></span> <br>
-            <label for="hengerSize">hengerűrtartalom</label>
+            <label for="hengerSize">hengerűrtartalom <sup class="required">*</sup>:</label>
             <select name="kobcenti" id="hengerSize">
-              <option value="0"></option>
+              <option value="0">Kérem válasszon</option>
               <option value="5.7">1500 cm3-ig</option>
               <option value="6.7">1501-2000 cm3-ig</option>
               <option value="7.6">2001-3000 cm3-ig</option>
@@ -67,7 +67,7 @@
             <input type="text" id="hova"><br>
             <label for="tav">Megtett távolság <sup class="required">*</sup>: </label>
             <input type="text" id="tav"> km  <span class="text-danger" id="tavError"></span> <br>
-            <button class="btn btn-outline-primary" type="submit" disabled>Számítás</button>
+            <button class="btn btn-outline-primary m-2" type="submit" disabled>Számítás</button>
             <div id="result"></div>
         </form>
     </div>

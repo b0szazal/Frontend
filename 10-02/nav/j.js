@@ -2,10 +2,13 @@ $(function(){
     let fuelPriceGood;
     let rendszamGood;
     let megtettTavGood;
+    let hengerSizeGood;
+    let amortDij=18;
+    let hengerSize;
     let benzin=[
         {
             value: 0,
-            text: ''
+            text: 'Kérem válasszon'
         },
         {
             value: 7.6,
@@ -31,7 +34,7 @@ $(function(){
     let diesel=[
         {
             value: 0,
-            text: ''
+            text: 'Kérem válasszon'
         },
         {
             value: 5.7,
@@ -67,8 +70,11 @@ $(function(){
             })
         }
     });
+    $("input[name='AmortDij']").change(function(){
+        amortDij=Number($(this).val());
+    });
     function EnableSubmit(){
-        if(fuelPriceGood && rendszamGood && megtettTavGood){
+        if(fuelPriceGood && rendszamGood && megtettTavGood && hengerSizeGood){
             $(".btn").prop("disabled",false);
         }
         else{
@@ -138,7 +144,24 @@ $(function(){
         }
         EnableSubmit();
     })
+    $("#hengerSize").on("change", function(){
+        try{
+            hengerSize=Number($(this).find(":selected").val());
+            if(hengerSize===0){
+                hengerSizeGood=false;
+            }
+            else{
+                hengerSizeGood=true;
+            }
+        }
+        catch(e){
+            hengerSizeGood=false;
+        }
+        EnableSubmit();
+    })
     $("form").on("submit", function(){
-        $("#result").text("Formátum befejezve! A beírt adatok: benzinár: "+$("#benzinAr").val()+", rendszám:");
+        let tav=Number($("#tav").val());
+        let fuelPrice=Number($("#benzinAr").val());
+        $("#result").text(`Térített összeg: ${Math.round(((tav/100)*hengerSize*fuelPrice)+amortDij*tav)} Ft`);
     });
 })
