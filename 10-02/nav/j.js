@@ -5,6 +5,7 @@ $(function(){
     let hengerSizeGood;
     let amortDij=18;
     let hengerSize;
+    let benzinType;
     let benzin=[
         {
             value: 0,
@@ -58,7 +59,7 @@ $(function(){
     })
     $("input[name='benzinType']").change(function(){
         $("#hengerSize").empty();
-        let benzinType=$(this).val();
+        benzinType=$(this).val();
         if(benzinType==="diesel"){
             diesel.forEach(function(item){
                 $("#hengerSize").append(`<option value="${item.value}">${item.text}</option>`)
@@ -162,6 +163,16 @@ $(function(){
     $("form").on("submit", function(){
         let tav=Number($("#tav").val());
         let fuelPrice=Number($("#benzinAr").val());
-        $("#result").text(`Térített összeg: ${Math.round(((tav/100)*hengerSize*fuelPrice)+amortDij*tav)} Ft`);
+        switch(benzinType){
+            case "elecktric":
+                $("#result").text(`Térített összeg: ${Math.round(((tav/100)*3*fuelPrice)+amortDij*tav)} Ft`);
+                break;
+            case "lpg":
+                $("#result").text(`Térített összeg: ${Math.round(((tav/100)*1.2*fuelPrice)+amortDij*tav)} Ft`);
+                break;
+            default:
+                $("#result").text(`Térített összeg: ${Math.round(((tav/100)*hengerSize*fuelPrice)+amortDij*tav)} Ft`);
+                break;
+        }
     });
 })
